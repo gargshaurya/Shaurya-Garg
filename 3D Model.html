@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shaurya Garg - 3D Model</title>
+    <title>Shaurya Garg - 3D Models</title>
     <style>
-        /* Reuse the same styles as index.html */
         body {
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
@@ -42,6 +41,7 @@
             cursor: pointer;
             border: 2px solid #333;
             border-radius: 8px;
+            margin: 15px;
         }
         /* Popup styling */
         .popup {
@@ -56,6 +56,8 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             z-index: 1000;
+            width: 80%;
+            max-width: 600px;
         }
         .popup h2 {
             margin-top: 0;
@@ -70,6 +72,18 @@
             background-color: rgba(0, 0, 0, 0.5);
             z-index: 999;
         }
+        button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #575757;
+        }
     </style>
 </head>
 <body>
@@ -79,57 +93,57 @@
     <nav>
         <a href="index.html">Home</a>
         <a href="3D Model.html">3D Model</a>
-        <a href= "Games.html">Game</a>
+        <a href="Games.html">Game</a>
         <a href="more.html">More</a>
     </nav>
     <div class="content">
-        <h2>3D Model</h2>
-        <p>Click on the image below to learn more about my 3D model.</p>
-        <img src="Unity_DhKnWIPObf.png" alt="3D Model" class="model-image" onclick="showPopup()">
+        <h2>3D Models</h2>
+        <p>Click on the images below to learn more about each 3D model.</p>
+        
+        <!-- Model 1 -->
+        <img src="Unity_DhKnWIPObf.png" alt="3D Model 1" class="model-image" onclick="showPopup('popup1')">
+        <!-- Model 2 -->
+        <img src="Unity_E4exhd0fLc.png" alt="3D Model 2" class="model-image" onclick="showPopup('popup2')">
+        <!-- Model 3 -->
+        <img src="VR Mobile Template.png" alt="3D Model 3" class="model-image" onclick="showPopup('popup3')">
     </div>
-    <!-- Popup and Overlay -->
+
+    <!-- Overlay -->
     <div class="overlay" id="overlay" onclick="hidePopup()"></div>
-    <div class="popup" id="popup">
-        <h2>3D Model Description</h2>
+
+    <!-- Popup 1 -->
+    <div class="popup" id="popup1">
+        <h2>3D Model 1: Detailed Landscape</h2>
         <p>This is a 3d model of an indian male. It was created using blender and AI was used for the refernece of the face of person. You can download this model from unity asset store</p>
         <button onclick="hidePopup()">Close</button>
     </div>
-      <div class="content">
-        <h2>3D Model</h2>
-        <p>Click on the image below to learn more about my 3D model.</p>
-        <img src="Unity_E4exhd0fLc.png" alt="3D Model" class="model-image" onclick="showPopup()">
-    </div>
-    <!-- Popup and Overlay -->
-    <div class="overlay" id="overlay" onclick="hidePopup()"></div>
-    <div class="popup" id="popup">
-        <h2>3D Model Description</h2>
+
+    <!-- Popup 2 -->
+    <div class="popup" id="popup2">
+        <h2>3D Model 2: Futuristic Vehicle</h2>
         <p>This is a pack of 3d models relating to indian villages. You can download this model from unity asset store</p>
         <button onclick="hidePopup()">Close</button>
     </div>
-          <div class="content">
-        <h2>3D Model</h2>
-        <p>Click on the image below to learn more about my 3D model.</p>
-        <img src="VR Mobile Template.png" alt="3D Model" class="model-image" onclick="showPopup()">
-    </div>
-    <!-- Popup and Overlay -->
-    <div class="overlay" id="overlay" onclick="hidePopup()"></div>
-    <div class="popup" id="popup">
-        <h2>3D Model Description</h2>
+
+    <!-- Popup 3 -->
+    <div class="popup" id="popup3">
+        <h2>3D Model 3: Architectural Building</h2>
         <p>This is a Template to make VR Mobile game. You can download this model from unity asset store</p>
         <button onclick="hidePopup()">Close</button>
     </div>
-    <footer>
-        <p>&copy; 2024 Shaurya Garg. All rights reserved.</p>
-    </footer>
+
     <script>
-        // JavaScript for showing and hiding the popup
-        function showPopup() {
-            document.getElementById("popup").style.display = "block";
-            document.getElementById("overlay").style.display = "block";
+        function showPopup(popupId) {
+            document.getElementById(popupId).style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
         }
+
         function hidePopup() {
-            document.getElementById("popup").style.display = "none";
-            document.getElementById("overlay").style.display = "none";
+            var popups = document.getElementsByClassName('popup');
+            for (var i = 0; i < popups.length; i++) {
+                popups[i].style.display = 'none';
+            }
+            document.getElementById('overlay').style.display = 'none';
         }
     </script>
 </body>
